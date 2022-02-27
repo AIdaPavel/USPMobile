@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">UspMobile</string>
+    <string name="app_name">USPMobile</string>
+    <string name="smartphones">Smartphones</string>
+    <string name="tablets">Tablets</string>
+    <string name="accessories">Accessories</string>
 </resources>

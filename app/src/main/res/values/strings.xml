@@ -3,4 +3,5 @@
     <string name="smartphones">Smartphones</string>
     <string name="tablets">Tablets</string>
     <string name="accessories">Accessories</string>
+    <string name="back_pressed">Нажмите еще раз, чтобы выйти.</string>
 </resources>

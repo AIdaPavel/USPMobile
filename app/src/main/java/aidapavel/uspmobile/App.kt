@@ -1,11 +1,14 @@
 package aidapavel.uspmobile
 
 import aidapavel.uspmobile.databinding.ActivityMainBinding
+import aidapavel.uspmobile.ui.base.BottomMenu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
 
 class App : AppCompatActivity() {
+    private var backPressedTime: Long = 0L
+    private lateinit var toast: Toast
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,26 +16,22 @@ class App : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
-            when(menuItem.itemId) {
-                R.id.bottom_nav_smartphone -> {
-                    Log.d("menuItem", "${menuItem.title}")
-                    true
-                }
-                R.id.bottom_nav_tablet -> {
-                    Log.d("menuItem", "${menuItem.title}")
-                    true
-                }
-                R.id.bottom_nav_accessories -> {
-                    Log.d("menuItem", "${menuItem.title}")
-                    true
-                }
-                else -> {
-                    false
-                }
-            }
-        }
+        BottomMenu(binding).usedBottomMenu()
+    }
 
-        binding.bottomNavigationView.selectedItemId = R.id.bottom_nav_smartphone
+    override fun onBackPressed() {
+        toast = Toast.makeText(binding.root.context, R.string.back_pressed, Toast.LENGTH_SHORT)
+        if (BottomMenu(binding).backPressed()) {
+            if (backPressedTime + 2000 > System.currentTimeMillis()) {
+                super.onBackPressed()
+            }
+            toast.show()
+        }
+        backPressedTime = System.currentTimeMillis()
+    }
+
+    override fun onDestroy() {
+        toast.cancel()
+        super.onDestroy()
     }
 }

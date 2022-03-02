@@ -15,5 +15,8 @@
 
         <!-- Hide the status bar -->
         <item name="android:windowFullscreen">true</item>
+
+        <!-- Color menu toolbar -->
+        <item name="colorControlNormal">@color/white</item>
     </style>
 </resources>

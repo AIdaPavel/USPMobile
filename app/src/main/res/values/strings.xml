@@ -4,4 +4,8 @@
     <string name="tablets">Tablets</string>
     <string name="accessories">Accessories</string>
     <string name="back_pressed">Нажмите еще раз, чтобы выйти.</string>
+    <string name="search">Поиск</string>
+    <string name="settings">Настройки</string>
+    <string name="website">https://USPMobile.ru</string>
+    <string name="support">Помощь</string>
 </resources>

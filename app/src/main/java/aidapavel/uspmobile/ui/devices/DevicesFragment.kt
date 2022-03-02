@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import moxy.MvpAppCompatFragment
 
-class DevicesFragment() : MvpAppCompatFragment(R.layout.fragment_devices) {
+class DevicesFragment : MvpAppCompatFragment(R.layout.fragment_devices) {
     private val binding: FragmentDevicesBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

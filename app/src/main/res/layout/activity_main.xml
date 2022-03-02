@@ -9,18 +9,27 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="?actionBarSize"
         android:background="@color/black"
-        app:title="@string/app_name"
-        app:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/toolbarImage"
+        app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/toolbar_menu"
         app:subtitle="@string/website"
         app:subtitleTextColor="@color/grey"
-        app:logo="@mipmap/ic_icon_toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/toolbarImage"
+        android:layout_width="?actionBarSize"
+        android:layout_height="?actionBarSize"
+        android:src="@drawable/ic_toolbar"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"

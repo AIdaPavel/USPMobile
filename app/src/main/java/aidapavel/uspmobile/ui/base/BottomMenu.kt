@@ -2,11 +2,12 @@ package aidapavel.uspmobile.ui.base
 
 import aidapavel.uspmobile.R
 import aidapavel.uspmobile.databinding.ActivityMainBinding
+import android.util.Log
 import androidx.viewpager2.widget.ViewPager2
 
 class BottomMenu(private val binding: ActivityMainBinding) : IBackPressed {
 
-    private var value: Int = 0
+    private var value: Int = 1
 
     fun usedBottomMenu() {
         binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->

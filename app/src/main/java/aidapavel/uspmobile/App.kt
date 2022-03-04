@@ -8,8 +8,8 @@ import android.os.Bundle
 import android.widget.Toast
 
 class App : AppCompatActivity() {
-    private var backPressedTime: Long = 0L
     private lateinit var toast: Toast
+    private var backPressedTime: Long = 0L
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,18 +17,17 @@ class App : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.viewPager.adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
-        BottomMenu(binding).usedBottomMenu()
+        toast = Toast.makeText(binding.root.context, R.string.back_pressed, Toast.LENGTH_SHORT)
 
+        binding.viewPager.adapter = ViewPagerAdapter(this)
+        BottomMenu(binding).usedBottomMenu()
     }
 
     override fun onBackPressed() {
-        toast = Toast.makeText(binding.root.context, R.string.back_pressed, Toast.LENGTH_SHORT)
         if (BottomMenu(binding).backPressed()) {
             if (backPressedTime + 1000 > System.currentTimeMillis()) {
                 super.onBackPressed()
             }
-
             toast.show()
         }
         backPressedTime = System.currentTimeMillis()

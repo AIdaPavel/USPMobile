@@ -1,16 +1,17 @@
 package aidapavel.uspmobile.ui.adapter
 
 import aidapavel.uspmobile.ui.devices.DevicesFragment
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
+class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity ) {
 
-    private val fragments = arrayOf(DevicesFragment(), DevicesFragment(), DevicesFragment())
+    private val fragments = arrayOf(DevicesFragment, DevicesFragment, DevicesFragment)
 
     override fun getItemCount() = fragments.size
 
-    override fun createFragment(position: Int) = fragments[position]
+    override fun createFragment(position: Int) = fragments[position].newInstance(position)
 
 }

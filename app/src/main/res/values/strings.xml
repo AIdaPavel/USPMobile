@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">USPMobile</string>
-    <string name="smartphones">Smartphones</string>
-    <string name="tablets">Tablets</string>
-    <string name="accessories">Accessories</string>
+    <string name="smartphones">Смартфоны</string>
+    <string name="tablets">Планшеты</string>
+    <string name="accessories">Аксессуары</string>
     <string name="back_pressed">Нажмите еще раз, чтобы выйти.</string>
     <string name="search">Поиск</string>
     <string name="settings">Настройки</string>

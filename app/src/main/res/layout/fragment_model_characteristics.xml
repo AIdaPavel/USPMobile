@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/modelUsp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="fsdfadsfafasd fadsf adsf zdsdf adsf adsafdsa f sadf dsaf dsafadsfads fsaf adsfsad fdsaf sdgfasf afads fdsa fadsf adsf adf adsfdsafads fsadf " />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/lite_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/modelUsp" />
+
+
+            <TextView
+                android:id="@+id/modelDisplay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintHorizontal_weight="1"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/displayCharacteristic"
+                app:layout_constraintTop_toBottomOf="@+id/modelUsp"
+                app:layout_constraintBottom_toBottomOf="@+id/displayCharacteristic"
+                android:text="display"/>
+
+            <TextView
+                android:id="@+id/displayCharacteristic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="3"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@+id/modelDisplay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/modelUsp"
+                android:text='7,6" asfasdsa asd afdsfa asfaf adfdafdff \nsdf dsfs  fdsfdsfsdf ds fdsf dsfdsf dsfds sdsf dsfdsfds dsfdsfds fasdsa'/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/lite_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/displayCharacteristic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

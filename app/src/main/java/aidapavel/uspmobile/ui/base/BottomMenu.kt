@@ -7,8 +7,6 @@ import androidx.viewpager2.widget.ViewPager2
 
 class BottomMenu(private val binding: ActivityMainBinding) : IBackPressed {
 
-    private var value: Int = 1
-
     fun usedBottomMenu() {
         binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
@@ -35,26 +33,18 @@ class BottomMenu(private val binding: ActivityMainBinding) : IBackPressed {
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 when(position) {
-                    0 -> {
+                    0 ->
                         binding.bottomNavigationView
                             .menu.findItem(R.id.bottom_nav_tablet).isChecked = true
-                        value = position
-                    }
-                    1 -> {
+                    1 ->
                         binding.bottomNavigationView
                             .menu.findItem(R.id.bottom_nav_smartphone).isChecked = true
-                        value = position
-                    }
-                    2 -> {
+                    2 ->
                         binding.bottomNavigationView
                             .menu.findItem(R.id.bottom_nav_accessories).isChecked = true
-                        value = position
-                    }
-                    else -> {
+                    else ->
                         binding.bottomNavigationView
                             .menu.findItem(R.id.bottom_nav_smartphone).isChecked = true
-                        value = 1
-                    }
                 }
             }
         })
@@ -67,9 +57,5 @@ class BottomMenu(private val binding: ActivityMainBinding) : IBackPressed {
         }
         binding.bottomNavigationView.selectedItemId = R.id.bottom_nav_smartphone
         return false
-    }
-
-    fun getValue(): Int {
-        return value
     }
 }

@@ -2,8 +2,6 @@ package aidapavel.uspmobile.ui.adapter
 
 import aidapavel.uspmobile.ui.devices.DevicesFragment
 import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity ) {

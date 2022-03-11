@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.view.View
 import moxy.MvpAppCompatFragment
 
-class DevicesFragment() : MvpAppCompatFragment(R.layout.fragment_devices_main) {
+class DevicesFragment : MvpAppCompatFragment(R.layout.fragment_devices_main) {
     private val binding: FragmentDevicesMainBinding by viewBinding()
     private var positionValue: Int = 0
 

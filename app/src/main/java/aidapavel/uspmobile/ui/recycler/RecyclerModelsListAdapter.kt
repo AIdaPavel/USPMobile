@@ -1,13 +1,9 @@
 package aidapavel.uspmobile.ui.recycler
 
-import aidapavel.uspmobile.R
 import aidapavel.uspmobile.databinding.FragmentModelItemBinding
-import aidapavel.uspmobile.ui.devices.ModelFragment
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerModelsListAdapter(private val data:List<Data>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

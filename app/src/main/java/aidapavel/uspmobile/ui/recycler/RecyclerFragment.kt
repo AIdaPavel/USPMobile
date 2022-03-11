@@ -14,8 +14,6 @@ class RecyclerFragment(private val position: Int) : MvpAppCompatFragment(R.layou
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.recyclerModelList.layoutManager = GridLayoutManager(context, 3)
         setData(position)
 
     }
@@ -58,6 +56,11 @@ class RecyclerFragment(private val position: Int) : MvpAppCompatFragment(R.layou
             Data("Buds 2"),
             Data("Buds live"),
         )
+
+        val dataLaptop = arrayListOf(
+            Data("Book Pro 360"),
+            Data("Book Pro"),
+        )
         when (position) {
             0 -> {
                 binding.devicesTitle.text = getString(R.string.tablets)
@@ -70,6 +73,10 @@ class RecyclerFragment(private val position: Int) : MvpAppCompatFragment(R.layou
             2 -> {
                 binding.devicesTitle.text = getString(R.string.accessories)
                 binding.recyclerModelList.adapter = RecyclerModelsListAdapter(dataAccessory)
+            }
+            3 -> {
+                binding.devicesTitle.text = getString(R.string.laptop)
+                binding.recyclerModelList.adapter = RecyclerModelsListAdapter(dataLaptop)
             }
         }
     }

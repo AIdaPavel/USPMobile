@@ -1,13 +1,12 @@
 package aidapavel.uspmobile.ui.base
 
 import aidapavel.uspmobile.R
-import aidapavel.uspmobile.databinding.ActivityMainBinding
-import android.util.Log
+import aidapavel.uspmobile.databinding.FragmentViewpagerBinding
 import androidx.viewpager2.widget.ViewPager2
 
-class BottomMenu(private val binding: ActivityMainBinding) : IBackPressed {
+class BottomMenu {
 
-    fun usedBottomMenu() {
+    fun usedBottomMenu(binding: FragmentViewpagerBinding) {
         binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
                 R.id.bottom_nav_tablet -> {
@@ -20,6 +19,10 @@ class BottomMenu(private val binding: ActivityMainBinding) : IBackPressed {
                 }
                 R.id.bottom_nav_accessories -> {
                     binding.viewPager.currentItem = 2
+                    true
+                }
+                R.id.bottom_nav_laptops -> {
+                    binding.viewPager.currentItem = 3
                     true
                 }
                 else -> {
@@ -42,20 +45,14 @@ class BottomMenu(private val binding: ActivityMainBinding) : IBackPressed {
                     2 ->
                         binding.bottomNavigationView
                             .menu.findItem(R.id.bottom_nav_accessories).isChecked = true
+                    3 ->
+                        binding.bottomNavigationView
+                            .menu.findItem(R.id.bottom_nav_laptops).isChecked = true
                     else ->
                         binding.bottomNavigationView
                             .menu.findItem(R.id.bottom_nav_smartphone).isChecked = true
                 }
             }
         })
-    }
-
-
-    override fun backPressed(): Boolean {
-        if (binding.bottomNavigationView.selectedItemId == R.id.bottom_nav_smartphone) {
-            return true
-        }
-        binding.bottomNavigationView.selectedItemId = R.id.bottom_nav_smartphone
-        return false
     }
 }

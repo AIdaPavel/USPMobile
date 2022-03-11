@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_watch"
         android:title="@string/accessories" />
 
+    <item
+        android:id="@+id/bottom_nav_laptops"
+        android:icon="@drawable/ic_laptop"
+        android:title="@string/laptop" />
+
 </menu>

@@ -11,7 +11,8 @@
         android:theme="@style/Theme.UspMobile">
         <activity
             android:name=".App"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

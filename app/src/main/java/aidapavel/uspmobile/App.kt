@@ -1,15 +1,18 @@
 package aidapavel.uspmobile
 
 import aidapavel.uspmobile.databinding.ActivityMainBinding
-import aidapavel.uspmobile.ui.base.BottomMenu
-import aidapavel.uspmobile.ui.adapter.ViewPagerAdapter
-import androidx.appcompat.app.AppCompatActivity
+import aidapavel.uspmobile.ui.ViewPagerFragment
+import aidapavel.uspmobile.ui.base.viewBinding
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class App : AppCompatActivity() {
-    private lateinit var toast: Toast
     private var backPressedTime: Long = 0L
+    private lateinit var toast: Toast
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,12 +22,11 @@ class App : AppCompatActivity() {
 
         toast = Toast.makeText(binding.root.context, R.string.back_pressed, Toast.LENGTH_SHORT)
 
-        binding.viewPager.adapter = ViewPagerAdapter(this)
-        BottomMenu(binding).usedBottomMenu()
+        supportFragmentManager.beginTransaction().replace(R.id.containerMain, ViewPagerFragment()).commit()
     }
 
     override fun onBackPressed() {
-        if (BottomMenu(binding).backPressed()) {
+        if (ViewPagerFragment().backPressed()) {
             if (backPressedTime + 1000 > System.currentTimeMillis()) {
                 super.onBackPressed()
             }

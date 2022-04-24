@@ -5,7 +5,6 @@ import aidapavel.uspmobile.databinding.FragmentModelsListBinding
 import aidapavel.uspmobile.ui.base.viewBinding
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
 import moxy.MvpAppCompatFragment
 
 class RecyclerFragment(private val position: Int) : MvpAppCompatFragment(R.layout.fragment_models_list) {

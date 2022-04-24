@@ -22,7 +22,7 @@ class ViewPagerFragment : MvpAppCompatFragment(R.layout.fragment_viewpager), IBa
 
     override fun backPressed(): Boolean {
         //TODO разобраться с binding-ом (приходит NULL)
-        /*if (binding.bottomNavigationView.selectedItemId == R.id.bottom_nav_smartphone) {
+ /*       if (binding.bottomNavigationView.selectedItemId == R.id.bottom_nav_smartphone) {
             return true
         }
         binding.bottomNavigationView.selectedItemId = R.id.bottom_nav_smartphone

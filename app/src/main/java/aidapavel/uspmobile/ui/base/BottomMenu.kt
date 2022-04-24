@@ -30,7 +30,6 @@ class BottomMenu {
                 }
             }
         }
-
         binding.bottomNavigationView.selectedItemId = R.id.bottom_nav_smartphone
 
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {

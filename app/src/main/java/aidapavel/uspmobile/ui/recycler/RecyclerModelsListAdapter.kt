@@ -1,10 +1,14 @@
 package aidapavel.uspmobile.ui.recycler
 
+import aidapavel.uspmobile.R
 import aidapavel.uspmobile.databinding.FragmentModelItemBinding
+import aidapavel.uspmobile.ui.devices.ModelFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.coroutines.coroutineContext
 
 class RecyclerModelsListAdapter(private val data:List<Data>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -29,7 +33,6 @@ class RecyclerModelsListAdapter(private val data:List<Data>) : RecyclerView.Adap
                 .bind(itemView).apply {
                     textView.text = data.name
                     cardView.setOnClickListener {
-
                     }
                 }
         }

@@ -15,10 +15,10 @@ class DevicesFragment : MvpAppCompatFragment(R.layout.fragment_devices_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setModelsListTablets()
+        setModelsListDevices()
     }
 
-    private fun setModelsListTablets(){
+    private fun setModelsListDevices(){
         childFragmentManager.beginTransaction()
                 .replace(R.id.container, RecyclerFragment(positionValue))
                 .commit()
